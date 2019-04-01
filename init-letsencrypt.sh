@@ -32,6 +32,9 @@ docker-compose run --rm --entrypoint "\
     -subj '/CN=localhost'" certbot
 echo
 
+echo '### Starting mongo and strapi ...'
+docker-compose up -d db
+docker-compose up -d api
 
 echo "### Starting nginx ..."
 docker-compose up --force-recreate -d nginx
