@@ -43,6 +43,7 @@ services:
       - ./data/nginx:/etc/nginx/conf.d
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
+      - ./frontend:/frontend
     ports:
       - "80:80"
       - "443:443"
