@@ -30,6 +30,12 @@ services:
       - ./db:/data/db
     restart: always
 
+  frontend-builder:
+    image: node:11.1.0-alpine
+    volumes:
+      - ./frontend:/frontend
+    command: "/bin/sh -c 'cd /frontend && npm install'"
+
   nginx:
     image: nginx:1.15-alpine
     restart: unless-stopped
