@@ -34,7 +34,7 @@ services:
     image: node:11.1.0-alpine
     volumes:
       - ./frontend:/frontend
-    command: "/bin/sh -c 'cd /frontend && npm install'"
+    command: "/bin/sh -c 'cd /frontend && npm install && npm run build'"
 
   nginx:
     image: nginx:1.15-alpine
