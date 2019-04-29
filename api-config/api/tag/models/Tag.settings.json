@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "tag",
+  "info": {
+    "name": "tag",
+    "description": "Tags das notícias"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Noticias": {
+      "collection": "noticia",
+      "via": "Tags"
+    }
+  }
+}

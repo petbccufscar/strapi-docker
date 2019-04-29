@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/alunos",
+      "handler": "Aluno.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alunos/count",
+      "handler": "Aluno.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alunos/:_id",
+      "handler": "Aluno.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/alunos",
+      "handler": "Aluno.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/alunos/:_id",
+      "handler": "Aluno.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/alunos/:_id",
+      "handler": "Aluno.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

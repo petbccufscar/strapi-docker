@@ -1,0 +1,79 @@
+{
+  "connection": "default",
+  "collectionName": "docente",
+  "info": {
+    "name": "docente",
+    "description": "Docentes do departamento"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Lattes": {
+      "default": "",
+      "type": "string"
+    },
+    "Descricao": {
+      "default": "",
+      "type": "text"
+    },
+    "Foto": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "Email": {
+      "default": "",
+      "type": "email",
+      "required": true
+    },
+    "Horas": {
+      "default": "",
+      "type": "integer"
+    },
+    "Nivel": {
+      "default": "Doutorado",
+      "type": "enumeration",
+      "enum": [
+        "Doutorado",
+        "Pos",
+        "Mestrado"
+      ],
+      "required": true
+    },
+    "Tipo": {
+      "default": "Adjunto",
+      "type": "enumeration",
+      "enum": [
+        "Adjunto",
+        "Associado",
+        "Substituto",
+        "Aposentado"
+      ],
+      "required": true
+    },
+    "Telefone": {
+      "default": "",
+      "type": "string"
+    },
+    "Areas": {
+      "collection": "area",
+      "via": "Docentes"
+    },
+    "Site": {
+      "default": "",
+      "type": "string"
+    },
+    "laboratorio": {
+      "collection": "laboratorio",
+      "dominant": true,
+      "via": "Docentes"
+    }
+  }
+}

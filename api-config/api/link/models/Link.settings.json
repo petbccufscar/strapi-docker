@@ -1,0 +1,29 @@
+{
+  "connection": "default",
+  "collectionName": "link",
+  "info": {
+    "name": "link",
+    "description": "Links rápidos"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Link": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Texto_alternativo": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Imagem": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

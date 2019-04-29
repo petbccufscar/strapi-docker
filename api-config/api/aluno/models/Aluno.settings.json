@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "alunos",
+  "info": {
+    "name": "aluno",
+    "description": "Alunos do departamento"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Ano": {
+      "default": "",
+      "min": 1972,
+      "type": "integer",
+      "required": true
+    },
+    "Foto": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

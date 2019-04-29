@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/funcionarios",
+      "handler": "Funcionarios.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/funcionarios/count",
+      "handler": "Funcionarios.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/funcionarios/:_id",
+      "handler": "Funcionarios.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/funcionarios",
+      "handler": "Funcionarios.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/funcionarios/:_id",
+      "handler": "Funcionarios.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/funcionarios/:_id",
+      "handler": "Funcionarios.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

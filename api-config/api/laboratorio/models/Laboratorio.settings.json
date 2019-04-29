@@ -1,0 +1,33 @@
+{
+  "connection": "default",
+  "collectionName": "laboratorios",
+  "info": {
+    "name": "laboratorio",
+    "description": "Laboratórios de pesquisa"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Descricao": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "Logo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "Docentes": {
+      "collection": "docente",
+      "via": "laboratorio"
+    }
+  }
+}

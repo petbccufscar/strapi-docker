@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/docentes",
+      "handler": "Docente.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/docentes/count",
+      "handler": "Docente.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/docentes/:_id",
+      "handler": "Docente.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/docentes",
+      "handler": "Docente.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/docentes/:_id",
+      "handler": "Docente.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/docentes/:_id",
+      "handler": "Docente.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

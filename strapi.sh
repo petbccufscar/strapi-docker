@@ -27,7 +27,21 @@ then
     npm install --prefix ./$APP_NAME
 fi
 
+if [ ! -L $APP_NAME/public/uploads ]
+then
+    rm -rf $APP_NAME/public/uploads
+    ln -s backup/uploads $APP_NAME/public/uploads
+fi
+
+cp api-config/api/* $APP_NAME/api -r
+
 cd $APP_NAME
+
+if [ ! -d "plugins/graphql" ]
+then
+    strapi install graphql 
+fi
+
 strapi start &
 
 strapiPID=$!

@@ -16,6 +16,7 @@ services:
       - DATABASE_AUTHENTICATION_DATABASE=admin
       - HOST=localhost
     volumes:
+      - ./backup/uploads:/usr/src/api/backup/uploads
       - ./strapi-app:/usr/src/api/strapi-app
       #- /usr/src/api/strapi-app/node_modules
     depends_on:
