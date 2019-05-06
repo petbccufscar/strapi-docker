@@ -30,10 +30,20 @@ fi
 if [ ! -L $APP_NAME/public/uploads ]
 then
     rm -rf $APP_NAME/public/uploads
-    ln -s backup/uploads $APP_NAME/public/uploads
+    ln -s `pwd`/backup/uploads $APP_NAME/public/uploads
 fi
 
-cp api-config/api/* $APP_NAME/api -r
+if [ $( ls -d $APP_NAME/api ) ]
+then
+    rm -rf $APP_NAME/api
+    cp api-config/api $APP_NAME -r
+    rm -rf $APP_NAME/config
+    cp api-config/config $APP_NAME -r
+    rm $APP_NAME/plugins/users-permissions/config/jwt.json
+    cp api-config/jwt.json $APP_NAME/plugins/users-permissions/config/jwt.json
+    rm $APP_NAME/plugins/users-permissions/models/User.settings.json
+    cp api-config/User.settings.json $APP_NAME/plugins/users-permissions/models/User.settings.json 
+fi
 
 cd $APP_NAME
 
