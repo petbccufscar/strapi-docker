@@ -3,7 +3,7 @@
   "collectionName": "area",
   "info": {
     "name": "area",
-    "description": "Área de pesquisa"
+    "description": "Área de pesquisa."
   },
   "options": {
     "timestamps": true

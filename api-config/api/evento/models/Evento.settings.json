@@ -12,7 +12,8 @@
     "Titulo": {
       "default": "",
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 55
     },
     "Data": {
       "default": "",
@@ -27,7 +28,8 @@
     "Local": {
       "default": "",
       "type": "string",
-      "required": true
+      "required": true,
+      "maxLength": 27
     }
   }
 }

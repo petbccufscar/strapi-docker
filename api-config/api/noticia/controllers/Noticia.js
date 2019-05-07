@@ -18,7 +18,7 @@ module.exports = {
     if (ctx.query._q) {
       return strapi.services.noticia.search(ctx.query);
     } else {
-      return strapi.services.noticia.fetchAll(ctx.query);
+      return strapi.services.noticia.fetchAll(ctx.query, populate);
     }
   },
 

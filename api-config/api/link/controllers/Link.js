@@ -18,7 +18,7 @@ module.exports = {
     if (ctx.query._q) {
       return strapi.services.link.search(ctx.query);
     } else {
-      return strapi.services.link.fetchAll(ctx.query);
+      return strapi.services.link.fetchAll(ctx.query, populate);
     }
   },
 

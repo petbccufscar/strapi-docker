@@ -23,8 +23,16 @@
     "Foto": {
       "model": "file",
       "via": "related",
-      "plugin": "upload",
-      "required": false
+      "plugin": "upload"
+    },
+    "Curso": {
+      "required": true,
+      "enum": [
+        "BCC",
+        "ENC"
+      ],
+      "default": "BCC",
+      "type": "enumeration"
     }
   }
 }

@@ -3,7 +3,7 @@
   "collectionName": "banner",
   "info": {
     "name": "banner",
-    "description": "Banner rotativo"
+    "description": "Banner rotativo."
   },
   "options": {
     "timestamps": true

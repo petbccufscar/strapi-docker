@@ -17,13 +17,20 @@
     "Foto": {
       "model": "file",
       "via": "related",
-      "plugin": "upload",
-      "required": false
+      "plugin": "upload"
     },
     "Area": {
       "default": "",
       "type": "string",
       "required": true
+    },
+    "Email": {
+      "required": true,
+      "type": "string"
+    },
+    "Telefone": {
+      "required": true,
+      "type": "string"
     }
   }
 }
