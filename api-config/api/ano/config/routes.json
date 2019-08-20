@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/anos",
+      "handler": "Ano.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/anos/count",
+      "handler": "Ano.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/anos/:_id",
+      "handler": "Ano.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/anos",
+      "handler": "Ano.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/anos/:_id",
+      "handler": "Ano.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/anos/:_id",
+      "handler": "Ano.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

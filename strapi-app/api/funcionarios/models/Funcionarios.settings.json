@@ -1,0 +1,36 @@
+{
+  "connection": "default",
+  "collectionName": "funcionarios",
+  "info": {
+    "name": "funcionarios",
+    "description": "Funcionários técnicos e admnistrativos\n"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Foto": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "Area": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "required": true,
+      "type": "string"
+    },
+    "Telefone": {
+      "required": true,
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "grupo",
+  "info": {
+    "name": "grupo",
+    "description": "Grupos de extensões (Alunos em ação)"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Descricao": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "Imagem": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "Site": {
+      "default": "",
+      "type": "string",
+      "required": true
+    }
+  }
+}

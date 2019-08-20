@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "area",
+  "info": {
+    "name": "area",
+    "description": "Área de pesquisa."
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Descricao": {
+      "default": "",
+      "type": "string"
+    },
+    "Docentes": {
+      "collection": "docente",
+      "dominant": true,
+      "via": "Areas"
+    }
+  }
+}

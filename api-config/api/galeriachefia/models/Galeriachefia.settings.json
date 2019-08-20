@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "galeria_chefia",
+  "info": {
+    "name": "galeriachefia",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "type": "string",
+      "required": true
+    },
+    "Ano_inicio": {
+      "type": "integer",
+      "required": true
+    },
+    "Ano_fim": {
+      "type": "integer",
+      "required": true
+    },
+    "Foto": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "Cargo": {
+      "required": true,
+      "enum": [
+        "chefia",
+        "vice_chefia"
+      ],
+      "type": "enumeration"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "banner",
+  "info": {
+    "name": "banner",
+    "description": "Banner rotativo."
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Imagem": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "Texto_alternativo": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "Ativo": {
+      "default": true,
+      "type": "boolean",
+      "required": true
+    },
+    "Ordem": {
+      "default": "",
+      "unique": true,
+      "type": "integer",
+      "required": true
+    }
+  }
+}

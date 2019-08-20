@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "turma_ano",
+  "info": {
+    "name": "ano",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Nome": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Ano": {
+      "type": "integer",
+      "min": 1972,
+      "default": "1972",
+      "required": true
+    }
+  }
+}

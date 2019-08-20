@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/galeriachefias",
+      "handler": "Galeriachefia.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/galeriachefias/count",
+      "handler": "Galeriachefia.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/galeriachefias/:_id",
+      "handler": "Galeriachefia.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/galeriachefias",
+      "handler": "Galeriachefia.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/galeriachefias/:_id",
+      "handler": "Galeriachefia.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/galeriachefias/:_id",
+      "handler": "Galeriachefia.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

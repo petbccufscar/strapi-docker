@@ -1,0 +1,2052 @@
+"""Alunos do departamento"""
+type Aluno {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Ano: Int!
+  Foto: UploadFile
+  Curso: ENUM_ALUNO_CURSO!
+}
+
+type AlunoAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type AlunoConnection {
+  values: [Aluno]
+  groupBy: AlunoGroupBy
+  aggregate: AlunoAggregator
+}
+
+type AlunoConnection_id {
+  key: ID
+  connection: AlunoConnection
+}
+
+type AlunoConnectionAno {
+  key: Int
+  connection: AlunoConnection
+}
+
+type AlunoConnectionCreatedAt {
+  key: DateTime
+  connection: AlunoConnection
+}
+
+type AlunoConnectionCurso {
+  key: String
+  connection: AlunoConnection
+}
+
+type AlunoConnectionFoto {
+  key: ID
+  connection: AlunoConnection
+}
+
+type AlunoConnectionId {
+  key: ID
+  connection: AlunoConnection
+}
+
+type AlunoConnectionNome {
+  key: String
+  connection: AlunoConnection
+}
+
+type AlunoConnectionUpdatedAt {
+  key: DateTime
+  connection: AlunoConnection
+}
+
+type AlunoGroupBy {
+  _id: [AlunoConnection_id]
+  id: [AlunoConnectionId]
+  createdAt: [AlunoConnectionCreatedAt]
+  updatedAt: [AlunoConnectionUpdatedAt]
+  Nome: [AlunoConnectionNome]
+  Ano: [AlunoConnectionAno]
+  Foto: [AlunoConnectionFoto]
+  Curso: [AlunoConnectionCurso]
+}
+
+input AlunoInput {
+  Nome: String!
+  Ano: Int!
+  Foto: ID
+  Curso: ENUM_ALUNO_CURSO!
+}
+
+type Ano {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Ano: Int!
+}
+
+type AnoAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type AnoConnection {
+  values: [Ano]
+  groupBy: AnoGroupBy
+  aggregate: AnoAggregator
+}
+
+type AnoConnection_id {
+  key: ID
+  connection: AnoConnection
+}
+
+type AnoConnectionAno {
+  key: Int
+  connection: AnoConnection
+}
+
+type AnoConnectionCreatedAt {
+  key: DateTime
+  connection: AnoConnection
+}
+
+type AnoConnectionId {
+  key: ID
+  connection: AnoConnection
+}
+
+type AnoConnectionNome {
+  key: String
+  connection: AnoConnection
+}
+
+type AnoConnectionUpdatedAt {
+  key: DateTime
+  connection: AnoConnection
+}
+
+type AnoGroupBy {
+  _id: [AnoConnection_id]
+  id: [AnoConnectionId]
+  createdAt: [AnoConnectionCreatedAt]
+  updatedAt: [AnoConnectionUpdatedAt]
+  Nome: [AnoConnectionNome]
+  Ano: [AnoConnectionAno]
+}
+
+input AnoInput {
+  Nome: String!
+  Ano: Int!
+}
+
+"""Área de pesquisa."""
+type Area {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Descricao: String
+  Docentes(sort: String, limit: Int, start: Int, where: JSON): [Docente]
+}
+
+type AreaAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type AreaConnection {
+  values: [Area]
+  groupBy: AreaGroupBy
+  aggregate: AreaAggregator
+}
+
+type AreaConnection_id {
+  key: ID
+  connection: AreaConnection
+}
+
+type AreaConnectionCreatedAt {
+  key: DateTime
+  connection: AreaConnection
+}
+
+type AreaConnectionDescricao {
+  key: String
+  connection: AreaConnection
+}
+
+type AreaConnectionId {
+  key: ID
+  connection: AreaConnection
+}
+
+type AreaConnectionNome {
+  key: String
+  connection: AreaConnection
+}
+
+type AreaConnectionUpdatedAt {
+  key: DateTime
+  connection: AreaConnection
+}
+
+type AreaGroupBy {
+  _id: [AreaConnection_id]
+  id: [AreaConnectionId]
+  createdAt: [AreaConnectionCreatedAt]
+  updatedAt: [AreaConnectionUpdatedAt]
+  Nome: [AreaConnectionNome]
+  Descricao: [AreaConnectionDescricao]
+}
+
+input AreaInput {
+  Nome: String!
+  Descricao: String
+  Docentes: [ID]
+}
+
+"""Banner rotativo."""
+type Banner {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Imagem: UploadFile
+  Texto_alternativo: String!
+  Ativo: Boolean!
+  Ordem: Int!
+}
+
+type BannerAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type BannerConnection {
+  values: [Banner]
+  groupBy: BannerGroupBy
+  aggregate: BannerAggregator
+}
+
+type BannerConnection_id {
+  key: ID
+  connection: BannerConnection
+}
+
+type BannerConnectionAtivo {
+  key: Boolean
+  connection: BannerConnection
+}
+
+type BannerConnectionCreatedAt {
+  key: DateTime
+  connection: BannerConnection
+}
+
+type BannerConnectionId {
+  key: ID
+  connection: BannerConnection
+}
+
+type BannerConnectionImagem {
+  key: ID
+  connection: BannerConnection
+}
+
+type BannerConnectionOrdem {
+  key: Int
+  connection: BannerConnection
+}
+
+type BannerConnectionTexto_alternativo {
+  key: String
+  connection: BannerConnection
+}
+
+type BannerConnectionUpdatedAt {
+  key: DateTime
+  connection: BannerConnection
+}
+
+type BannerGroupBy {
+  _id: [BannerConnection_id]
+  id: [BannerConnectionId]
+  createdAt: [BannerConnectionCreatedAt]
+  updatedAt: [BannerConnectionUpdatedAt]
+  Imagem: [BannerConnectionImagem]
+  Texto_alternativo: [BannerConnectionTexto_alternativo]
+  Ativo: [BannerConnectionAtivo]
+  Ordem: [BannerConnectionOrdem]
+}
+
+input BannerInput {
+  Imagem: ID
+  Texto_alternativo: String!
+  Ativo: Boolean!
+  Ordem: Int!
+}
+
+input createAlunoInput {
+  data: AlunoInput
+}
+
+type createAlunoPayload {
+  aluno: Aluno
+}
+
+input createAnoInput {
+  data: AnoInput
+}
+
+type createAnoPayload {
+  ano: Ano
+}
+
+input createAreaInput {
+  data: AreaInput
+}
+
+type createAreaPayload {
+  area: Area
+}
+
+input createBannerInput {
+  data: BannerInput
+}
+
+type createBannerPayload {
+  banner: Banner
+}
+
+input createDocenteInput {
+  data: DocenteInput
+}
+
+type createDocentePayload {
+  docente: Docente
+}
+
+input createEventoInput {
+  data: EventoInput
+}
+
+type createEventoPayload {
+  evento: Evento
+}
+
+input createFuncionariosInput {
+  data: FuncionariosInput
+}
+
+type createFuncionariosPayload {
+  funcionario: Funcionarios
+}
+
+input createGaleriachefiaInput {
+  data: GaleriachefiaInput
+}
+
+type createGaleriachefiaPayload {
+  galeriachefia: Galeriachefia
+}
+
+input createGrupoInput {
+  data: GrupoInput
+}
+
+type createGrupoPayload {
+  grupo: Grupo
+}
+
+input createLaboratorioInput {
+  data: LaboratorioInput
+}
+
+type createLaboratorioPayload {
+  laboratorio: Laboratorio
+}
+
+input createLinkInput {
+  data: LinkInput
+}
+
+type createLinkPayload {
+  link: Link
+}
+
+input createNoticiaInput {
+  data: NoticiaInput
+}
+
+type createNoticiaPayload {
+  noticia: Noticia
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createTagInput {
+  data: TagInput
+}
+
+type createTagPayload {
+  tag: Tag
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""
+The `DateTime` scalar represents a date and time following the ISO 8601 standard
+"""
+scalar DateTime
+
+input deleteAlunoInput {
+  where: InputID
+}
+
+type deleteAlunoPayload {
+  aluno: Aluno
+}
+
+input deleteAnoInput {
+  where: InputID
+}
+
+type deleteAnoPayload {
+  ano: Ano
+}
+
+input deleteAreaInput {
+  where: InputID
+}
+
+type deleteAreaPayload {
+  area: Area
+}
+
+input deleteBannerInput {
+  where: InputID
+}
+
+type deleteBannerPayload {
+  banner: Banner
+}
+
+input deleteDocenteInput {
+  where: InputID
+}
+
+type deleteDocentePayload {
+  docente: Docente
+}
+
+input deleteEventoInput {
+  where: InputID
+}
+
+type deleteEventoPayload {
+  evento: Evento
+}
+
+input deleteFuncionariosInput {
+  where: InputID
+}
+
+type deleteFuncionariosPayload {
+  funcionario: Funcionarios
+}
+
+input deleteGaleriachefiaInput {
+  where: InputID
+}
+
+type deleteGaleriachefiaPayload {
+  galeriachefia: Galeriachefia
+}
+
+input deleteGrupoInput {
+  where: InputID
+}
+
+type deleteGrupoPayload {
+  grupo: Grupo
+}
+
+input deleteLaboratorioInput {
+  where: InputID
+}
+
+type deleteLaboratorioPayload {
+  laboratorio: Laboratorio
+}
+
+input deleteLinkInput {
+  where: InputID
+}
+
+type deleteLinkPayload {
+  link: Link
+}
+
+input deleteNoticiaInput {
+  where: InputID
+}
+
+type deleteNoticiaPayload {
+  noticia: Noticia
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteTagInput {
+  where: InputID
+}
+
+type deleteTagPayload {
+  tag: Tag
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""Docentes do departamento"""
+type Docente {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Lattes: String
+  Descricao: String
+  Foto: UploadFile
+  Email: String!
+  Horas: Int
+  Nivel: ENUM_DOCENTE_NIVEL!
+  Tipo: ENUM_DOCENTE_TIPO!
+  Telefone: String
+  Site: String
+  Areas(sort: String, limit: Int, start: Int, where: JSON): [Area]
+  laboratorio(sort: String, limit: Int, start: Int, where: JSON): [Laboratorio]
+}
+
+type DocenteAggregator {
+  count: Int
+  totalCount: Int
+  sum: DocenteAggregatorSum
+  avg: DocenteAggregatorAvg
+  min: DocenteAggregatorMin
+  max: DocenteAggregatorMax
+}
+
+type DocenteAggregatorAvg {
+  Horas: Float
+}
+
+type DocenteAggregatorMax {
+  Horas: Float
+}
+
+type DocenteAggregatorMin {
+  Horas: Float
+}
+
+type DocenteAggregatorSum {
+  Horas: Float
+}
+
+type DocenteConnection {
+  values: [Docente]
+  groupBy: DocenteGroupBy
+  aggregate: DocenteAggregator
+}
+
+type DocenteConnection_id {
+  key: ID
+  connection: DocenteConnection
+}
+
+type DocenteConnectionCreatedAt {
+  key: DateTime
+  connection: DocenteConnection
+}
+
+type DocenteConnectionDescricao {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionEmail {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionFoto {
+  key: ID
+  connection: DocenteConnection
+}
+
+type DocenteConnectionHoras {
+  key: Int
+  connection: DocenteConnection
+}
+
+type DocenteConnectionId {
+  key: ID
+  connection: DocenteConnection
+}
+
+type DocenteConnectionLattes {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionNivel {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionNome {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionSite {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionTelefone {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionTipo {
+  key: String
+  connection: DocenteConnection
+}
+
+type DocenteConnectionUpdatedAt {
+  key: DateTime
+  connection: DocenteConnection
+}
+
+type DocenteGroupBy {
+  _id: [DocenteConnection_id]
+  id: [DocenteConnectionId]
+  createdAt: [DocenteConnectionCreatedAt]
+  updatedAt: [DocenteConnectionUpdatedAt]
+  Nome: [DocenteConnectionNome]
+  Lattes: [DocenteConnectionLattes]
+  Descricao: [DocenteConnectionDescricao]
+  Foto: [DocenteConnectionFoto]
+  Email: [DocenteConnectionEmail]
+  Horas: [DocenteConnectionHoras]
+  Nivel: [DocenteConnectionNivel]
+  Tipo: [DocenteConnectionTipo]
+  Telefone: [DocenteConnectionTelefone]
+  Site: [DocenteConnectionSite]
+}
+
+input DocenteInput {
+  Nome: String!
+  Lattes: String
+  Descricao: String
+  Foto: ID
+  Email: String!
+  Horas: Int
+  Nivel: ENUM_DOCENTE_NIVEL!
+  Tipo: ENUM_DOCENTE_TIPO!
+  Telefone: String
+  Areas: [ID]
+  Site: String
+  laboratorio: [ID]
+}
+
+input editAlunoInput {
+  Nome: String
+  Ano: Int
+  Foto: ID
+  Curso: ENUM_ALUNO_CURSO
+}
+
+input editAnoInput {
+  Nome: String
+  Ano: Int
+}
+
+input editAreaInput {
+  Nome: String
+  Descricao: String
+  Docentes: [ID]
+}
+
+input editBannerInput {
+  Imagem: ID
+  Texto_alternativo: String
+  Ativo: Boolean
+  Ordem: Int
+}
+
+input editDocenteInput {
+  Nome: String
+  Lattes: String
+  Descricao: String
+  Foto: ID
+  Email: String
+  Horas: Int
+  Nivel: ENUM_DOCENTE_NIVEL
+  Tipo: ENUM_DOCENTE_TIPO
+  Telefone: String
+  Areas: [ID]
+  Site: String
+  laboratorio: [ID]
+}
+
+input editEventoInput {
+  Titulo: String
+  Data: DateTime
+  Descricao: String
+  Local: String
+}
+
+input editFileInput {
+  name: String
+  hash: String
+  sha256: String
+  ext: String
+  mime: String
+  size: String
+  url: String
+  provider: String
+  public_id: String
+  related: [ID]
+}
+
+input editFuncionariosInput {
+  Nome: String
+  Foto: ID
+  Area: String
+  Email: String
+  Telefone: String
+}
+
+input editGaleriachefiaInput {
+  Nome: String
+  Ano_inicio: Int
+  Ano_fim: Int
+  Foto: ID
+  Cargo: ENUM_GALERIACHEFIA_CARGO
+}
+
+input editGrupoInput {
+  Nome: String
+  Descricao: String
+  Imagem: ID
+  Site: String
+}
+
+input editLaboratorioInput {
+  Nome: String
+  Descricao: String
+  Logo: ID
+  Docentes: [ID]
+  NomeExpandido: String
+}
+
+input editLinkInput {
+  Link: String
+  Texto_alternativo: String
+  Imagem: ID
+}
+
+input editNoticiaInput {
+  Titulo: String
+  Descricao: String
+  Conteudo: String
+  Imagem: ID
+  Imagem_texto_alternativo: String
+  Tags: [ID]
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input editTagInput {
+  Nome: String
+  Noticias: [ID]
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+enum ENUM_ALUNO_CURSO {
+  BCC
+  ENC
+}
+
+enum ENUM_DOCENTE_NIVEL {
+  Doutorado
+  Pos
+  Mestrado
+}
+
+enum ENUM_DOCENTE_TIPO {
+  Adjunto
+  Associado
+  Substituto
+  Aposentado
+  Titular
+}
+
+enum ENUM_GALERIACHEFIA_CARGO {
+  chefia
+  vice_chefia
+}
+
+"""Eventos do/no departamento"""
+type Evento {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Titulo: String!
+  Data: DateTime!
+  Descricao: String!
+  Local: String!
+}
+
+type EventoAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type EventoConnection {
+  values: [Evento]
+  groupBy: EventoGroupBy
+  aggregate: EventoAggregator
+}
+
+type EventoConnection_id {
+  key: ID
+  connection: EventoConnection
+}
+
+type EventoConnectionCreatedAt {
+  key: DateTime
+  connection: EventoConnection
+}
+
+type EventoConnectionData {
+  key: DateTime
+  connection: EventoConnection
+}
+
+type EventoConnectionDescricao {
+  key: String
+  connection: EventoConnection
+}
+
+type EventoConnectionId {
+  key: ID
+  connection: EventoConnection
+}
+
+type EventoConnectionLocal {
+  key: String
+  connection: EventoConnection
+}
+
+type EventoConnectionTitulo {
+  key: String
+  connection: EventoConnection
+}
+
+type EventoConnectionUpdatedAt {
+  key: DateTime
+  connection: EventoConnection
+}
+
+type EventoGroupBy {
+  _id: [EventoConnection_id]
+  id: [EventoConnectionId]
+  createdAt: [EventoConnectionCreatedAt]
+  updatedAt: [EventoConnectionUpdatedAt]
+  Titulo: [EventoConnectionTitulo]
+  Data: [EventoConnectionData]
+  Descricao: [EventoConnectionDescricao]
+  Local: [EventoConnectionLocal]
+}
+
+input EventoInput {
+  Titulo: String!
+  Data: DateTime!
+  Descricao: String!
+  Local: String!
+}
+
+input FileInput {
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  public_id: String
+  related: [ID]
+}
+
+"""Funcionários técnicos e admnistrativos"""
+type Funcionarios {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Foto: UploadFile
+  Area: String!
+  Email: String!
+  Telefone: String!
+}
+
+type FuncionariosAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type FuncionariosConnection {
+  values: [Funcionarios]
+  groupBy: FuncionariosGroupBy
+  aggregate: FuncionariosAggregator
+}
+
+type FuncionariosConnection_id {
+  key: ID
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionArea {
+  key: String
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionCreatedAt {
+  key: DateTime
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionEmail {
+  key: String
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionFoto {
+  key: ID
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionId {
+  key: ID
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionNome {
+  key: String
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionTelefone {
+  key: String
+  connection: FuncionariosConnection
+}
+
+type FuncionariosConnectionUpdatedAt {
+  key: DateTime
+  connection: FuncionariosConnection
+}
+
+type FuncionariosGroupBy {
+  _id: [FuncionariosConnection_id]
+  id: [FuncionariosConnectionId]
+  createdAt: [FuncionariosConnectionCreatedAt]
+  updatedAt: [FuncionariosConnectionUpdatedAt]
+  Nome: [FuncionariosConnectionNome]
+  Foto: [FuncionariosConnectionFoto]
+  Area: [FuncionariosConnectionArea]
+  Email: [FuncionariosConnectionEmail]
+  Telefone: [FuncionariosConnectionTelefone]
+}
+
+input FuncionariosInput {
+  Nome: String!
+  Foto: ID
+  Area: String!
+  Email: String!
+  Telefone: String!
+}
+
+type Galeriachefia {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Ano_inicio: Int!
+  Ano_fim: Int!
+  Foto: UploadFile
+  Cargo: ENUM_GALERIACHEFIA_CARGO!
+}
+
+type GaleriachefiaAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type GaleriachefiaConnection {
+  values: [Galeriachefia]
+  groupBy: GaleriachefiaGroupBy
+  aggregate: GaleriachefiaAggregator
+}
+
+type GaleriachefiaConnection_id {
+  key: ID
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionAno_fim {
+  key: Int
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionAno_inicio {
+  key: Int
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionCargo {
+  key: String
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionCreatedAt {
+  key: DateTime
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionFoto {
+  key: ID
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionId {
+  key: ID
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionNome {
+  key: String
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaConnectionUpdatedAt {
+  key: DateTime
+  connection: GaleriachefiaConnection
+}
+
+type GaleriachefiaGroupBy {
+  _id: [GaleriachefiaConnection_id]
+  id: [GaleriachefiaConnectionId]
+  createdAt: [GaleriachefiaConnectionCreatedAt]
+  updatedAt: [GaleriachefiaConnectionUpdatedAt]
+  Nome: [GaleriachefiaConnectionNome]
+  Ano_inicio: [GaleriachefiaConnectionAno_inicio]
+  Ano_fim: [GaleriachefiaConnectionAno_fim]
+  Foto: [GaleriachefiaConnectionFoto]
+  Cargo: [GaleriachefiaConnectionCargo]
+}
+
+input GaleriachefiaInput {
+  Nome: String!
+  Ano_inicio: Int!
+  Ano_fim: Int!
+  Foto: ID
+  Cargo: ENUM_GALERIACHEFIA_CARGO!
+}
+
+"""Grupos de extensões (Alunos em ação)"""
+type Grupo {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Descricao: String!
+  Imagem: UploadFile
+  Site: String!
+}
+
+type GrupoAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type GrupoConnection {
+  values: [Grupo]
+  groupBy: GrupoGroupBy
+  aggregate: GrupoAggregator
+}
+
+type GrupoConnection_id {
+  key: ID
+  connection: GrupoConnection
+}
+
+type GrupoConnectionCreatedAt {
+  key: DateTime
+  connection: GrupoConnection
+}
+
+type GrupoConnectionDescricao {
+  key: String
+  connection: GrupoConnection
+}
+
+type GrupoConnectionId {
+  key: ID
+  connection: GrupoConnection
+}
+
+type GrupoConnectionImagem {
+  key: ID
+  connection: GrupoConnection
+}
+
+type GrupoConnectionNome {
+  key: String
+  connection: GrupoConnection
+}
+
+type GrupoConnectionSite {
+  key: String
+  connection: GrupoConnection
+}
+
+type GrupoConnectionUpdatedAt {
+  key: DateTime
+  connection: GrupoConnection
+}
+
+type GrupoGroupBy {
+  _id: [GrupoConnection_id]
+  id: [GrupoConnectionId]
+  createdAt: [GrupoConnectionCreatedAt]
+  updatedAt: [GrupoConnectionUpdatedAt]
+  Nome: [GrupoConnectionNome]
+  Descricao: [GrupoConnectionDescricao]
+  Imagem: [GrupoConnectionImagem]
+  Site: [GrupoConnectionSite]
+}
+
+input GrupoInput {
+  Nome: String!
+  Descricao: String!
+  Imagem: ID
+  Site: String!
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""Laboratórios de pesquisa"""
+type Laboratorio {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Descricao: String!
+  Logo: UploadFile
+  NomeExpandido: String!
+  Docentes(sort: String, limit: Int, start: Int, where: JSON): [Docente]
+}
+
+type LaboratorioAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type LaboratorioConnection {
+  values: [Laboratorio]
+  groupBy: LaboratorioGroupBy
+  aggregate: LaboratorioAggregator
+}
+
+type LaboratorioConnection_id {
+  key: ID
+  connection: LaboratorioConnection
+}
+
+type LaboratorioConnectionCreatedAt {
+  key: DateTime
+  connection: LaboratorioConnection
+}
+
+type LaboratorioConnectionDescricao {
+  key: String
+  connection: LaboratorioConnection
+}
+
+type LaboratorioConnectionId {
+  key: ID
+  connection: LaboratorioConnection
+}
+
+type LaboratorioConnectionLogo {
+  key: ID
+  connection: LaboratorioConnection
+}
+
+type LaboratorioConnectionNome {
+  key: String
+  connection: LaboratorioConnection
+}
+
+type LaboratorioConnectionNomeExpandido {
+  key: String
+  connection: LaboratorioConnection
+}
+
+type LaboratorioConnectionUpdatedAt {
+  key: DateTime
+  connection: LaboratorioConnection
+}
+
+type LaboratorioGroupBy {
+  _id: [LaboratorioConnection_id]
+  id: [LaboratorioConnectionId]
+  createdAt: [LaboratorioConnectionCreatedAt]
+  updatedAt: [LaboratorioConnectionUpdatedAt]
+  Nome: [LaboratorioConnectionNome]
+  Descricao: [LaboratorioConnectionDescricao]
+  Logo: [LaboratorioConnectionLogo]
+  NomeExpandido: [LaboratorioConnectionNomeExpandido]
+}
+
+input LaboratorioInput {
+  Nome: String!
+  Descricao: String!
+  Logo: ID
+  Docentes: [ID]
+  NomeExpandido: String!
+}
+
+"""Links rápidos"""
+type Link {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Link: String!
+  Texto_alternativo: String!
+  Imagem: UploadFile
+}
+
+type LinkAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type LinkConnection {
+  values: [Link]
+  groupBy: LinkGroupBy
+  aggregate: LinkAggregator
+}
+
+type LinkConnection_id {
+  key: ID
+  connection: LinkConnection
+}
+
+type LinkConnectionCreatedAt {
+  key: DateTime
+  connection: LinkConnection
+}
+
+type LinkConnectionId {
+  key: ID
+  connection: LinkConnection
+}
+
+type LinkConnectionImagem {
+  key: ID
+  connection: LinkConnection
+}
+
+type LinkConnectionLink {
+  key: String
+  connection: LinkConnection
+}
+
+type LinkConnectionTexto_alternativo {
+  key: String
+  connection: LinkConnection
+}
+
+type LinkConnectionUpdatedAt {
+  key: DateTime
+  connection: LinkConnection
+}
+
+type LinkGroupBy {
+  _id: [LinkConnection_id]
+  id: [LinkConnectionId]
+  createdAt: [LinkConnectionCreatedAt]
+  updatedAt: [LinkConnectionUpdatedAt]
+  Link: [LinkConnectionLink]
+  Texto_alternativo: [LinkConnectionTexto_alternativo]
+  Imagem: [LinkConnectionImagem]
+}
+
+input LinkInput {
+  Link: String!
+  Texto_alternativo: String!
+  Imagem: ID
+}
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Aluno | createAlunoPayload | updateAlunoPayload | deleteAlunoPayload | AlunoConnection | AlunoAggregator | AlunoGroupBy | AlunoConnection_id | AlunoConnectionId | AlunoConnectionCreatedAt | AlunoConnectionUpdatedAt | AlunoConnectionNome | AlunoConnectionAno | AlunoConnectionFoto | AlunoConnectionCurso | Ano | createAnoPayload | updateAnoPayload | deleteAnoPayload | AnoConnection | AnoAggregator | AnoGroupBy | AnoConnection_id | AnoConnectionId | AnoConnectionCreatedAt | AnoConnectionUpdatedAt | AnoConnectionNome | AnoConnectionAno | Area | createAreaPayload | updateAreaPayload | deleteAreaPayload | AreaConnection | AreaAggregator | AreaGroupBy | AreaConnection_id | AreaConnectionId | AreaConnectionCreatedAt | AreaConnectionUpdatedAt | AreaConnectionNome | AreaConnectionDescricao | Banner | createBannerPayload | updateBannerPayload | deleteBannerPayload | BannerConnection | BannerAggregator | BannerGroupBy | BannerConnection_id | BannerConnectionId | BannerConnectionCreatedAt | BannerConnectionUpdatedAt | BannerConnectionImagem | BannerConnectionTexto_alternativo | BannerConnectionAtivo | BannerConnectionOrdem | Docente | createDocentePayload | updateDocentePayload | deleteDocentePayload | DocenteConnection | DocenteAggregator | DocenteAggregatorSum | DocenteAggregatorAvg | DocenteAggregatorMin | DocenteAggregatorMax | DocenteGroupBy | DocenteConnection_id | DocenteConnectionId | DocenteConnectionCreatedAt | DocenteConnectionUpdatedAt | DocenteConnectionNome | DocenteConnectionLattes | DocenteConnectionDescricao | DocenteConnectionFoto | DocenteConnectionEmail | DocenteConnectionHoras | DocenteConnectionNivel | DocenteConnectionTipo | DocenteConnectionTelefone | DocenteConnectionSite | Evento | createEventoPayload | updateEventoPayload | deleteEventoPayload | EventoConnection | EventoAggregator | EventoGroupBy | EventoConnection_id | EventoConnectionId | EventoConnectionCreatedAt | EventoConnectionUpdatedAt | EventoConnectionTitulo | EventoConnectionData | EventoConnectionDescricao | EventoConnectionLocal | Funcionarios | createFuncionariosPayload | updateFuncionariosPayload | deleteFuncionariosPayload | FuncionariosConnection | FuncionariosAggregator | FuncionariosGroupBy | FuncionariosConnection_id | FuncionariosConnectionId | FuncionariosConnectionCreatedAt | FuncionariosConnectionUpdatedAt | FuncionariosConnectionNome | FuncionariosConnectionFoto | FuncionariosConnectionArea | FuncionariosConnectionEmail | FuncionariosConnectionTelefone | Galeriachefia | createGaleriachefiaPayload | updateGaleriachefiaPayload | deleteGaleriachefiaPayload | GaleriachefiaConnection | GaleriachefiaAggregator | GaleriachefiaGroupBy | GaleriachefiaConnection_id | GaleriachefiaConnectionId | GaleriachefiaConnectionCreatedAt | GaleriachefiaConnectionUpdatedAt | GaleriachefiaConnectionNome | GaleriachefiaConnectionAno_inicio | GaleriachefiaConnectionAno_fim | GaleriachefiaConnectionFoto | GaleriachefiaConnectionCargo | Grupo | createGrupoPayload | updateGrupoPayload | deleteGrupoPayload | GrupoConnection | GrupoAggregator | GrupoGroupBy | GrupoConnection_id | GrupoConnectionId | GrupoConnectionCreatedAt | GrupoConnectionUpdatedAt | GrupoConnectionNome | GrupoConnectionDescricao | GrupoConnectionImagem | GrupoConnectionSite | Laboratorio | createLaboratorioPayload | updateLaboratorioPayload | deleteLaboratorioPayload | LaboratorioConnection | LaboratorioAggregator | LaboratorioGroupBy | LaboratorioConnection_id | LaboratorioConnectionId | LaboratorioConnectionCreatedAt | LaboratorioConnectionUpdatedAt | LaboratorioConnectionNome | LaboratorioConnectionDescricao | LaboratorioConnectionLogo | LaboratorioConnectionNomeExpandido | Link | createLinkPayload | updateLinkPayload | deleteLinkPayload | LinkConnection | LinkAggregator | LinkGroupBy | LinkConnection_id | LinkConnectionId | LinkConnectionCreatedAt | LinkConnectionUpdatedAt | LinkConnectionLink | LinkConnectionTexto_alternativo | LinkConnectionImagem | Noticia | createNoticiaPayload | updateNoticiaPayload | deleteNoticiaPayload | NoticiaConnection | NoticiaAggregator | NoticiaGroupBy | NoticiaConnection_id | NoticiaConnectionId | NoticiaConnectionCreatedAt | NoticiaConnectionUpdatedAt | NoticiaConnectionTitulo | NoticiaConnectionDescricao | NoticiaConnectionConteudo | NoticiaConnectionImagem | NoticiaConnectionImagem_texto_alternativo | Tag | createTagPayload | updateTagPayload | deleteTagPayload | TagConnection | TagAggregator | TagGroupBy | TagConnection_id | TagConnectionId | TagConnectionCreatedAt | TagConnectionUpdatedAt | TagConnectionNome | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionId | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+
+type Mutation {
+  createAluno(input: createAlunoInput): createAlunoPayload
+  updateAluno(input: updateAlunoInput): updateAlunoPayload
+  deleteAluno(input: deleteAlunoInput): deleteAlunoPayload
+  createAno(input: createAnoInput): createAnoPayload
+  updateAno(input: updateAnoInput): updateAnoPayload
+  deleteAno(input: deleteAnoInput): deleteAnoPayload
+  createArea(input: createAreaInput): createAreaPayload
+  updateArea(input: updateAreaInput): updateAreaPayload
+  deleteArea(input: deleteAreaInput): deleteAreaPayload
+  createBanner(input: createBannerInput): createBannerPayload
+  updateBanner(input: updateBannerInput): updateBannerPayload
+  deleteBanner(input: deleteBannerInput): deleteBannerPayload
+  createDocente(input: createDocenteInput): createDocentePayload
+  updateDocente(input: updateDocenteInput): updateDocentePayload
+  deleteDocente(input: deleteDocenteInput): deleteDocentePayload
+  createEvento(input: createEventoInput): createEventoPayload
+  updateEvento(input: updateEventoInput): updateEventoPayload
+  deleteEvento(input: deleteEventoInput): deleteEventoPayload
+  createFuncionarios(input: createFuncionariosInput): createFuncionariosPayload
+  updateFuncionarios(input: updateFuncionariosInput): updateFuncionariosPayload
+  deleteFuncionarios(input: deleteFuncionariosInput): deleteFuncionariosPayload
+  createGaleriachefia(input: createGaleriachefiaInput): createGaleriachefiaPayload
+  updateGaleriachefia(input: updateGaleriachefiaInput): updateGaleriachefiaPayload
+  deleteGaleriachefia(input: deleteGaleriachefiaInput): deleteGaleriachefiaPayload
+  createGrupo(input: createGrupoInput): createGrupoPayload
+  updateGrupo(input: updateGrupoInput): updateGrupoPayload
+  deleteGrupo(input: deleteGrupoInput): deleteGrupoPayload
+  createLaboratorio(input: createLaboratorioInput): createLaboratorioPayload
+  updateLaboratorio(input: updateLaboratorioInput): updateLaboratorioPayload
+  deleteLaboratorio(input: deleteLaboratorioInput): deleteLaboratorioPayload
+  createLink(input: createLinkInput): createLinkPayload
+  updateLink(input: updateLinkInput): updateLinkPayload
+  deleteLink(input: deleteLinkInput): deleteLinkPayload
+  createNoticia(input: createNoticiaInput): createNoticiaPayload
+  updateNoticia(input: updateNoticiaInput): updateNoticiaPayload
+  deleteNoticia(input: deleteNoticiaInput): deleteNoticiaPayload
+  createTag(input: createTagInput): createTagPayload
+  updateTag(input: updateTagInput): updateTagPayload
+  deleteTag(input: deleteTagInput): deleteTagPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!
+}
+
+"""Notícias"""
+type Noticia {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Titulo: String!
+  Descricao: String!
+  Conteudo: String!
+  Imagem: UploadFile
+  Imagem_texto_alternativo: String!
+  Tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
+}
+
+type NoticiaAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type NoticiaConnection {
+  values: [Noticia]
+  groupBy: NoticiaGroupBy
+  aggregate: NoticiaAggregator
+}
+
+type NoticiaConnection_id {
+  key: ID
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionConteudo {
+  key: String
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionCreatedAt {
+  key: DateTime
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionDescricao {
+  key: String
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionId {
+  key: ID
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionImagem {
+  key: ID
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionImagem_texto_alternativo {
+  key: String
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionTitulo {
+  key: String
+  connection: NoticiaConnection
+}
+
+type NoticiaConnectionUpdatedAt {
+  key: DateTime
+  connection: NoticiaConnection
+}
+
+type NoticiaGroupBy {
+  _id: [NoticiaConnection_id]
+  id: [NoticiaConnectionId]
+  createdAt: [NoticiaConnectionCreatedAt]
+  updatedAt: [NoticiaConnectionUpdatedAt]
+  Titulo: [NoticiaConnectionTitulo]
+  Descricao: [NoticiaConnectionDescricao]
+  Conteudo: [NoticiaConnectionConteudo]
+  Imagem: [NoticiaConnectionImagem]
+  Imagem_texto_alternativo: [NoticiaConnectionImagem_texto_alternativo]
+}
+
+input NoticiaInput {
+  Titulo: String!
+  Descricao: String!
+  Conteudo: String!
+  Imagem: ID
+  Imagem_texto_alternativo: String!
+  Tags: [ID]
+}
+
+type Query {
+  aluno(id: ID!): Aluno
+  alunos(sort: String, limit: Int, start: Int, where: JSON): [Aluno]
+  alunosConnection(sort: String, limit: Int, start: Int, where: JSON): AlunoConnection
+  ano(id: ID!): Ano
+  anos(sort: String, limit: Int, start: Int, where: JSON): [Ano]
+  anosConnection(sort: String, limit: Int, start: Int, where: JSON): AnoConnection
+  area(id: ID!): Area
+  areas(sort: String, limit: Int, start: Int, where: JSON): [Area]
+  areasConnection(sort: String, limit: Int, start: Int, where: JSON): AreaConnection
+  banner(id: ID!): Banner
+  banners(sort: String, limit: Int, start: Int, where: JSON): [Banner]
+  bannersConnection(sort: String, limit: Int, start: Int, where: JSON): BannerConnection
+  docente(id: ID!): Docente
+  docentes(sort: String, limit: Int, start: Int, where: JSON): [Docente]
+  docentesConnection(sort: String, limit: Int, start: Int, where: JSON): DocenteConnection
+  evento(id: ID!): Evento
+  eventos(sort: String, limit: Int, start: Int, where: JSON): [Evento]
+  eventosConnection(sort: String, limit: Int, start: Int, where: JSON): EventoConnection
+  funcionario(id: ID!): Funcionarios
+  funcionarios(sort: String, limit: Int, start: Int, where: JSON): [Funcionarios]
+  funcionariosConnection(sort: String, limit: Int, start: Int, where: JSON): FuncionariosConnection
+  galeriachefia(id: ID!): Galeriachefia
+  galeriachefias(sort: String, limit: Int, start: Int, where: JSON): [Galeriachefia]
+  galeriachefiasConnection(sort: String, limit: Int, start: Int, where: JSON): GaleriachefiaConnection
+  grupo(id: ID!): Grupo
+  grupos(sort: String, limit: Int, start: Int, where: JSON): [Grupo]
+  gruposConnection(sort: String, limit: Int, start: Int, where: JSON): GrupoConnection
+  laboratorio(id: ID!): Laboratorio
+  laboratorios(sort: String, limit: Int, start: Int, where: JSON): [Laboratorio]
+  laboratoriosConnection(sort: String, limit: Int, start: Int, where: JSON): LaboratorioConnection
+  link(id: ID!): Link
+  links(sort: String, limit: Int, start: Int, where: JSON): [Link]
+  linksConnection(sort: String, limit: Int, start: Int, where: JSON): LinkConnection
+  noticia(id: ID!): Noticia
+  noticias(sort: String, limit: Int, start: Int, where: JSON): [Noticia]
+  noticiasConnection(sort: String, limit: Int, start: Int, where: JSON): NoticiaConnection
+  tag(id: ID!): Tag
+  tags(sort: String, limit: Int, start: Int, where: JSON): [Tag]
+  tagsConnection(sort: String, limit: Int, start: Int, where: JSON): TagConnection
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+  me: UsersPermissionsMe
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+"""Tags das notícias"""
+type Tag {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Nome: String!
+  Noticias(sort: String, limit: Int, start: Int, where: JSON): [Noticia]
+}
+
+type TagAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type TagConnection {
+  values: [Tag]
+  groupBy: TagGroupBy
+  aggregate: TagAggregator
+}
+
+type TagConnection_id {
+  key: ID
+  connection: TagConnection
+}
+
+type TagConnectionCreatedAt {
+  key: DateTime
+  connection: TagConnection
+}
+
+type TagConnectionId {
+  key: ID
+  connection: TagConnection
+}
+
+type TagConnectionNome {
+  key: String
+  connection: TagConnection
+}
+
+type TagConnectionUpdatedAt {
+  key: DateTime
+  connection: TagConnection
+}
+
+type TagGroupBy {
+  _id: [TagConnection_id]
+  id: [TagConnectionId]
+  createdAt: [TagConnectionCreatedAt]
+  updatedAt: [TagConnectionUpdatedAt]
+  Nome: [TagConnectionNome]
+}
+
+input TagInput {
+  Nome: String!
+  Noticias: [ID]
+}
+
+input updateAlunoInput {
+  where: InputID
+  data: editAlunoInput
+}
+
+type updateAlunoPayload {
+  aluno: Aluno
+}
+
+input updateAnoInput {
+  where: InputID
+  data: editAnoInput
+}
+
+type updateAnoPayload {
+  ano: Ano
+}
+
+input updateAreaInput {
+  where: InputID
+  data: editAreaInput
+}
+
+type updateAreaPayload {
+  area: Area
+}
+
+input updateBannerInput {
+  where: InputID
+  data: editBannerInput
+}
+
+type updateBannerPayload {
+  banner: Banner
+}
+
+input updateDocenteInput {
+  where: InputID
+  data: editDocenteInput
+}
+
+type updateDocentePayload {
+  docente: Docente
+}
+
+input updateEventoInput {
+  where: InputID
+  data: editEventoInput
+}
+
+type updateEventoPayload {
+  evento: Evento
+}
+
+input updateFuncionariosInput {
+  where: InputID
+  data: editFuncionariosInput
+}
+
+type updateFuncionariosPayload {
+  funcionario: Funcionarios
+}
+
+input updateGaleriachefiaInput {
+  where: InputID
+  data: editGaleriachefiaInput
+}
+
+type updateGaleriachefiaPayload {
+  galeriachefia: Galeriachefia
+}
+
+input updateGrupoInput {
+  where: InputID
+  data: editGrupoInput
+}
+
+type updateGrupoPayload {
+  grupo: Grupo
+}
+
+input updateLaboratorioInput {
+  where: InputID
+  data: editLaboratorioInput
+}
+
+type updateLaboratorioPayload {
+  laboratorio: Laboratorio
+}
+
+input updateLinkInput {
+  where: InputID
+  data: editLinkInput
+}
+
+type updateLinkPayload {
+  link: Link
+}
+
+input updateNoticiaInput {
+  where: InputID
+  data: editNoticiaInput
+}
+
+type updateNoticiaPayload {
+  noticia: Noticia
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateTagInput {
+  where: InputID
+  data: editTagInput
+}
+
+type updateTagPayload {
+  tag: Tag
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  _id: ID!
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  public_id: String
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileConnection_id {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionId {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionPublic_id {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSha256 {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileGroupBy {
+  _id: [UploadFileConnection_id]
+  id: [UploadFileConnectionId]
+  createdAt: [UploadFileConnectionCreatedAt]
+  updatedAt: [UploadFileConnectionUpdatedAt]
+  name: [UploadFileConnectionName]
+  hash: [UploadFileConnectionHash]
+  sha256: [UploadFileConnectionSha256]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  provider: [UploadFileConnectionProvider]
+  public_id: [UploadFileConnectionPublic_id]
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+type UsersPermissionsMe {
+  _id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  _id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+type UsersPermissionsPermission {
+  _id: ID!
+  id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  _id: ID!
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleConnection_id {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionId {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleGroupBy {
+  _id: [UsersPermissionsRoleConnection_id]
+  id: [UsersPermissionsRoleConnectionId]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsUser {
+  _id: ID!
+  id: ID!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+  totalCount: Int
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserConnection_id {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionId {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionProvider {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserGroupBy {
+  _id: [UsersPermissionsUserConnection_id]
+  id: [UsersPermissionsUserConnectionId]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  provider: [UsersPermissionsUserConnectionProvider]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+}

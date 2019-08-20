@@ -1,0 +1,35 @@
+{
+  "connection": "default",
+  "collectionName": "evento",
+  "info": {
+    "name": "evento",
+    "description": "Eventos do/no departamento"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Titulo": {
+      "default": "",
+      "type": "string",
+      "required": true,
+      "maxLength": 55
+    },
+    "Data": {
+      "default": "",
+      "type": "date",
+      "required": true
+    },
+    "Descricao": {
+      "default": "",
+      "type": "text",
+      "required": true
+    },
+    "Local": {
+      "default": "",
+      "type": "string",
+      "required": true,
+      "maxLength": 27
+    }
+  }
+}
