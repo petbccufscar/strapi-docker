@@ -15,6 +15,7 @@ services:
       - DATABASE_SSL=false
       - DATABASE_AUTHENTICATION_DATABASE=admin
       - HOST=localhost
+      - DEFAULT_EMAIL=contato@dc.ufscar.br
     volumes:
       - ./api-config:/usr/src/api/api-config
       - ./backup/uploads:/usr/src/api/backup/uploads

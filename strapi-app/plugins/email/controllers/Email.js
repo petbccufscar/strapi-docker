@@ -4,18 +4,10 @@
  * Email.js controller
  *
  * @description: A set of functions called "actions" of the `email` plugin.
+teste
  */
 
 const _ = require('lodash');
-var nodemailer = require('nodemailer');
-
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.user_email,
-    pass: process.env.user_password,
-  }
-});
 
 module.exports = {
   send: async (ctx) => {
@@ -37,23 +29,11 @@ module.exports = {
       return;
     }
 
-    let options = ctx.request.body;
+    let options = {...ctx.request.body, to:process.env.DEFAULT_EMAIL};
 
-    var mailOptions = {
-       from: process.env.user_email,
-       to: config.sendmail_default_replyto,
-       subject: 'Site DC:'+ctx.request.body.subject,
-       text: 'Nome: '+ctx.request.body.name+'\nEmail: '+ctx.request.body.email+'Mensagem: '+ctx.request.body.text,
-    };
+    await strapi.plugins.email.services.email.send(options, config);
 
-    transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-        console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-      }
-    }); 
-
+    // Send 200 `ok`
     ctx.send({});
   },
 
@@ -87,4 +67,3 @@ module.exports = {
     ctx.send({ok: true});
   },
 };
-
